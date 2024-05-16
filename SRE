@@ -2,24 +2,42 @@ Site Reliability Engineer (SRE) Interview Preparation Guide
 
 This repository is an attempt to consolidate useful resources for Site Reliability Engineer (SRE) interview preparation.
 
-##Site Reliability Engineering (SRE) is a discipline that blends aspects of software engineering and IT operations. SREs are responsible for ensuring the reliability, availability, and performance of large-scale, distributed systems. Here's an overview of the role and responsibilities of an SRE:
+# Site Reliability Engineering (SRE) Role & Responsibilities
 
-System Stability: SREs work to ensure that systems are stable and reliable. They design, build, and maintain systems with the goal of minimizing downtime and maximizing uptime.
+## 1. System Stability
+- Design, build, and maintain systems for high reliability and availability.
+  
+## 2. Automation and Tooling
+- Develop and maintain automation tools to streamline operations.
+- Build monitoring systems and deployment pipelines.
 
-Automation and Tooling: SREs develop and maintain tools and automation to streamline operations, increase efficiency, and reduce manual intervention. This includes writing scripts, building monitoring systems, and creating deployment pipelines.
+## 3. Service Level Objectives (SLOs)
+- Define and monitor SLOs for system reliability and performance.
+- Use SLOs to assess system health and prioritize improvements.
 
-Service Level Objectives (SLOs): SREs define and monitor Service Level Objectives, which are specific, measurable targets for system reliability and performance. They use SLOs to assess the health of systems and prioritize improvements.
+## 4. Incident Management
+- Respond to incidents and outages to minimize downtime.
+- Conduct post-incident reviews to identify root causes.
 
-Incident Management: SREs respond to incidents such as outages, performance degradation, or security breaches. They work to mitigate the impact of incidents, restore service as quickly as possible, and conduct post-incident reviews to identify root causes and prevent recurrence.
+## 5. Capacity Planning
+- Forecast future capacity needs based on usage trends.
+- Ensure systems have sufficient resources without over-provisioning.
 
-Capacity Planning: SREs forecast future capacity needs based on usage trends and growth projections. They ensure that systems have sufficient resources to handle current and anticipated loads, without over-provisioning and wasting resources.
+## 6. Performance Optimization
+- Identify and address performance bottlenecks in systems.
+- Tune configurations, optimize code, and redesign architecture.
 
-Performance Optimization: SREs identify and address performance bottlenecks in systems to improve overall efficiency and scalability. This may involve tuning configurations, optimizing code, or redesigning architecture.
+## 7. Security and Compliance
+- Collaborate with security teams to ensure systems are secure.
+- Implement security best practices and respond to incidents.
 
-Security and Compliance: SREs collaborate with security teams to ensure that systems are secure and compliant with relevant regulations and industry standards. They implement security best practices, conduct security audits, and respond to security incidents.
+## 8. Continuous Improvement
+- Conduct post-mortems and analyze metrics for improvement.
+- Drive initiatives to enhance reliability, scalability, and efficiency.
 
-Continuous Improvement: SREs are continuously looking for ways to improve systems and processes. They conduct post-mortems after incidents, analyze metrics to identify areas for improvement, and drive initiatives to enhance reliability, scalability, and efficiency.
+## 9. Cross-Functional Collaboration
+- Collaborate with software engineering, product management, and infrastructure teams.
+- Design and deploy new services and address reliability issues.
 
-Cross-Functional Collaboration: SREs collaborate closely with other teams such as software engineering, product management, and infrastructure teams. They work together to design and deploy new services, address reliability issues, and drive innovation.
-
-On-call Rotation: SREs typically participate in an on-call rotation, where they are responsible for responding to incidents outside of regular business hours. This ensures that systems are monitored and supported 24/7.
+## 10. On-call Rotation
+- Participate in an on-call rotation for incident response outside of business hours.
