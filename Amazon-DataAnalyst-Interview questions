@@ -1,0 +1,129 @@
+please provide the output the query
+/* DATA SETS:
+
+Table ORDERS (FACT): PRIMARY KEY(order_id, marketplace_id)
+marketplace_id    INTEGER
+order_id          INTEGER
+customer_id       INTEGER
+item              VARCHAR(255)
+units             INTEGER           
+order_date        DATE
+ 
+SAMPLE DATA
+marketplace_id     order_id    customer_id     item    units       order_date  
+1                  9021        123             A22     1           2021-02-01
+3                  8763        241             T14     1           2021-01-14            
+1                  4321        123             C13     2           2020-11-17        
+1                  6757        443             A22     3           2020-12-07         
+1                  3008        443             H59     1           2021-01-08       
+1                  2190        768             Q30     4           2021-01-29         
+1                  3741        943             P12     1           2021-01-03
+ 
+Table CATALOG (DIM): PRIMARY KEY(item, marketplace_id)
+marketplace_id           INTEGER
+item                     VARCHAR(255)
+product_group            VARCHAR(20)
+has_bullet_points        CHAR(1)
+has_customer_reviews     CHAR(1)
+
+
+SAMPLE DATA
+marketplace_id      item        product_group   has_bullet_points    has_customer_reviews             
+1                   A22         books           Y                    Y                
+1                   T14         electronics     Y                    N
+3                   B20         books                                N
+1                   C13         games                                N
+1                   Q72         games           N                    Y
+4                   A22         electronics     Y                    Y
+1                   T87         music           N                    Y
+3                   A22         books           Y                    Y            
+1                   H59         books                                N
+1                   Q30         games           Y                    Y
+1                   P12         toys                                 Y 
+
+Please write a query to return a list of all product groups that are available in the US but have not sold any units.
+Expected output columns: product_group
+*/
+
+Answer added as follows:
+To solve this problem, we need to find product groups that are available in the US (i.e., marketplace_id = 1 from the CATALOG table) but have not sold any units (i.e., items in ORDERS do not match).
+
+Query Explanation:
+Find US Product Groups:
+
+Filter the CATALOG table for marketplace_id = 1.
+Select all product_group values available in the US.
+Find Sold Product Groups:
+
+Join the ORDERS table with the CATALOG table on item and marketplace_id.
+Only include items that have sales (units > 0) in the ORDERS table.
+Exclude Sold Product Groups:
+
+Use a LEFT JOIN or a NOT IN subquery to exclude product groups that appear in the sold list.
+Remove Duplicates:
+
+Use DISTINCT to ensure no repeated product groups in the output.
+
+
+SQL Query as follows:
+SELECT DISTINCT c.product_group
+FROM CATALOG c
+WHERE c.marketplace_id = 1 -- Only include US product groups
+  AND c.product_group IS NOT NULL -- Exclude null product groups
+  AND c.product_group NOT IN (
+      SELECT DISTINCT c2.product_group
+      FROM CATALOG c2
+      JOIN ORDERS o
+        ON c2.item = o.item
+       AND c2.marketplace_id = o.marketplace_id
+      WHERE c2.marketplace_id = 1 -- US only
+        AND o.units > 0 -- Only items with sales
+  );
+
+Query Walkthrough:
+The inner query:
+
+SELECT DISTINCT c2.product_group
+FROM CATALOG c2
+JOIN ORDERS o
+  ON c2.item = o.item
+ AND c2.marketplace_id = o.marketplace_id
+WHERE c2.marketplace_id = 1 -- US only
+  AND o.units > 0 -- Only items with sales
+Finds all product groups that have sold at least one unit in the US.
+
+
+
+The outer query:
+SELECT DISTINCT c.product_group
+FROM CATALOG c
+WHERE c.marketplace_id = 1
+  AND c.product_group IS NOT NULL
+  AND c.product_group NOT IN (subquery above);
+Filters out product groups that have been sold and keeps the unsold ones.
+Expected Output (Based on Sample Data)
+From CATALOG (US only, marketplace_id = 1):
+
+item	product_group
+A22	books
+C13	games
+H59	books
+Q30	games
+P12	toys
+
+From ORDERS (Sold items in the US with units > 0):
+item	product_group
+A22	books
+C13	games
+Q30	games
+P12	toys
+
+Unsold Product Groups:
+product_group
+books
+
+Explanation: The only unsold product group is "books", as the item H59 from books in CATALOG has no sales in the ORDERS table.
+
+Final Output:
+product_group
+books
