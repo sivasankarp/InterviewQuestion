@@ -1,1 +1,198 @@
 
+Q: What is GCP?
+
+Answer:
+"GCP is Google's cloud computing platform that provides Infrastructure, Platform, Data Analytics, AI/ML, Networking, Security, and Managed Services to build and run applications at scale."
+
+Q: Why GCP over AWS?
+
+Answer:
+"GCP is known for strong data analytics, AI/ML capabilities, Kubernetes leadership through GKE, global private network infrastructure, and simplified managed services."
+
+Q: What is Compute Engine?
+
+Answer:
+"Compute Engine is GCP's Infrastructure-as-a-Service offering that provides virtual machines with full OS-level control."
+
+Q: What is GKE?
+
+Answer:
+"GKE is Google Kubernetes Engine, a fully managed Kubernetes service used to deploy, manage, and scale containerized applications."
+
+Q: Difference between Compute Engine and GKE?
+
+Answer:
+
+Compute Engine	GKE
+VM Based	Container Based
+Manual Management	Kubernetes Managed
+OS Management Required	Minimal Infrastructure Management
+Suitable for Legacy Apps	Suitable for Microservices
+Q: What is Cloud Run?
+
+Answer:
+"Cloud Run is a fully managed serverless platform for running containerized applications without managing infrastructure."
+
+Q: What is App Engine?
+
+Answer:
+"App Engine is a fully managed Platform-as-a-Service that allows developers to deploy applications without managing servers."
+
+Q: Difference between Cloud Run and GKE?
+
+Answer:
+"Cloud Run is best for stateless serverless workloads, while GKE is suitable for complex container orchestration and microservices architectures."
+
+Q: What is VPC?
+
+Answer:
+"VPC is a logically isolated virtual network in GCP that allows secure communication between cloud resources."
+
+Q: What is Shared VPC?
+
+Answer:
+"Shared VPC allows multiple projects to use a centralized network managed by a host project."
+
+Q: What is VPC Peering?
+
+Answer:
+"VPC Peering enables private communication between two VPC networks using internal IP addresses."
+
+Q: Difference between Shared VPC and VPC Peering?
+
+Answer:
+
+Shared VPC
+
+Centralized network management
+Same organization
+Common subnet sharing
+
+VPC Peering
+
+Independent networks
+Network-to-network connectivity
+No subnet sharing
+Q: What is Cloud Storage?
+
+Answer:
+"Cloud Storage is GCP's highly scalable object storage service used for unstructured data such as files, backups, images, and logs."
+
+Q: Storage Classes?
+
+Answer:
+
+Standard
+Nearline
+Coldline
+Archive
+
+"Chosen based on access frequency and cost requirements."
+
+Q: What is BigQuery?
+
+Answer:
+"BigQuery is a serverless, fully managed data warehouse used for large-scale analytics and SQL-based data processing."
+
+Q: Why BigQuery?
+
+Answer:
+"Massive scalability, serverless architecture, high performance, built-in machine learning, and pay-per-query pricing."
+
+Q: What is Pub/Sub?
+
+Answer:
+"Pub/Sub is a fully managed messaging service used for asynchronous event-driven communication between applications."
+
+Q: What is Dataflow?
+
+Answer:
+"Dataflow is a fully managed stream and batch data processing service based on Apache Beam."
+
+Q: What is Cloud SQL?
+
+Answer:
+"Cloud SQL is a managed relational database service supporting MySQL, PostgreSQL, and SQL Server."
+
+Q: Cloud SQL vs Spanner?
+
+Answer:
+
+Cloud SQL
+
+Regional
+Traditional RDBMS
+Lower scale
+
+Spanner
+
+Global scale
+Horizontally scalable
+Strong consistency
+Q: What is IAM?
+
+Answer:
+"IAM controls who can access which resources and what actions they can perform within GCP."
+
+Q: Principle of Least Privilege?
+
+Answer:
+"Users should receive only the minimum permissions required to perform their job functions."
+
+Q: What is Service Account?
+
+Answer:
+"A Service Account is a non-human identity used by applications and services to authenticate and access GCP resources."
+
+Q: What is Load Balancer?
+
+Answer:
+"A Load Balancer distributes incoming traffic across multiple backend resources to improve availability, scalability, and performance."
+
+Q: Global vs Regional Load Balancer?
+
+Answer:
+
+Global
+
+Layer 7
+Single Anycast IP
+Cross-region traffic distribution
+
+Regional
+
+Region-specific
+Layer 4
+Local traffic handling
+Q: What is High Availability?
+
+Answer:
+"High Availability ensures applications remain accessible despite infrastructure failures through redundancy and failover mechanisms."
+
+Q: What is Disaster Recovery?
+
+Answer:
+"Disaster Recovery is the strategy and process used to restore applications and data after major failures or disasters."
+
+Q: RTO and RPO?
+
+Answer:
+
+RTO
+
+Recovery Time Objective
+Maximum acceptable downtime
+
+RPO
+
+Recovery Point Objective
+Maximum acceptable data loss
+Q: How do you reduce GCP cost?
+
+Answer:
+"Using rightsizing, autoscaling, committed use discounts, spot VMs, storage lifecycle policies, and continuous monitoring through Cloud Billing and recommendations."
+
+Q: Describe a migration approach.
+
+Answer:
+"Assessment, discovery, dependency mapping, landing zone setup, pilot migration, data migration, application migration, validation, cutover, and optimization."
