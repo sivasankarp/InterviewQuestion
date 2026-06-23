@@ -1,0 +1,403 @@
+Architecture & Design
+1. How would you design a highly available application on GCP?
+
+Answer:
+
+Deploy across multiple zones.
+Use Regional Managed Instance Groups.
+Place Global Load Balancer in front.
+Use Cloud SQL HA or Spanner.
+Store files in Cloud Storage.
+Enable monitoring and auto-healing.
+2. Customer wants 99.99% availability. What architecture would you propose?
+
+Answer:
+
+Multi-region deployment.
+Global Load Balancer.
+Active-Active architecture.
+Cloud Spanner or replicated databases.
+Cross-region DR.
+Automated failover.
+3. How would you design a multi-region application?
+
+Answer:
+
+Deploy application in multiple regions.
+Use Global HTTP(S) Load Balancer.
+Use Cloud DNS.
+Use Spanner or replicated databases.
+Configure health checks and failover.
+4. How would you handle traffic spikes during Black Friday?
+
+Answer:
+
+Use autoscaling MIGs or GKE HPA.
+Cloud CDN.
+Load Balancer.
+Cloud Armor.
+Cache static content.
+5. How would you migrate a 3-tier application to GCP?
+
+Answer:
+
+Web → GKE/Cloud Run
+App → GKE/Compute Engine
+Database → Cloud SQL/Spanner
+Storage → Cloud Storage
+Load Balancer in front
+Compute & Containers
+6. Why choose GKE over Compute Engine?
+
+Answer:
+When:
+
+Microservices
+Container workloads
+Auto scaling
+CI/CD integration
+Kubernetes orchestration needed
+7. When would you use Cloud Run instead of GKE?
+
+Answer:
+
+Stateless applications
+API services
+Event-driven workloads
+Small teams
+No infrastructure management
+8. Customer wants serverless architecture. What services?
+
+Answer:
+
+Cloud Run
+Cloud Functions
+Pub/Sub
+Firestore
+Cloud Storage
+9. How would you run batch jobs?
+
+Answer:
+
+Cloud Run Jobs
+Batch Service
+Dataflow
+Composer scheduling
+10. How do you ensure Kubernetes high availability?
+
+Answer:
+
+Regional GKE cluster
+Multiple node pools
+Pod anti-affinity
+HPA
+Multi-zone deployment
+Networking
+11. How would you connect on-premise to GCP?
+
+Answer:
+
+Cloud VPN
+Dedicated Interconnect
+Partner Interconnect
+12. VPN vs Interconnect?
+
+Answer:
+
+VPN:
+
+Internet-based
+Lower bandwidth
+Cheaper
+
+Interconnect:
+
+Private connectivity
+High bandwidth
+Lower latency
+13. How would you secure internet-facing applications?
+
+Answer:
+
+Cloud Armor
+WAF policies
+Load Balancer
+SSL/TLS
+IAM
+DDoS protection
+14. Shared VPC use case?
+
+Answer:
+Centralized networking across multiple projects while maintaining project-level resource isolation.
+
+15. How do you isolate environments?
+
+Answer:
+
+Separate projects
+Separate VPCs
+IAM boundaries
+Organization policies
+Security
+16. How do you secure GCP environments?
+
+Answer:
+
+IAM least privilege
+Service Accounts
+VPC Service Controls
+Cloud Armor
+CMEK
+Audit Logs
+17. How do you manage secrets?
+
+Answer:
+Use Secret Manager with IAM-controlled access.
+
+18. Customer requires encryption keys under their control.
+
+Answer:
+Use Cloud KMS with CMEK.
+
+19. How do you prevent data exfiltration?
+
+Answer:
+
+VPC Service Controls
+Private Google Access
+Restricted APIs
+IAM controls
+20. What is BeyondCorp?
+
+Answer:
+Google's Zero Trust model where identity and device trust are validated before access.
+
+Storage
+21. Which storage service for backup archives?
+
+Answer:
+Cloud Storage Archive Class.
+
+22. Customer needs shared file system.
+
+Answer:
+Filestore.
+
+23. Large media files accessed globally.
+
+Answer:
+Cloud Storage + Cloud CDN.
+
+24. How would you implement lifecycle management?
+
+Answer:
+Configure Storage Lifecycle Policies.
+
+25. Which storage for billions of objects?
+
+Answer:
+Cloud Storage.
+
+Databases
+26. Customer needs MySQL database.
+
+Answer:
+Cloud SQL MySQL.
+
+27. Customer needs global consistency.
+
+Answer:
+Spanner.
+
+28. Customer needs NoSQL document database.
+
+Answer:
+Firestore.
+
+29. Cloud SQL vs AlloyDB?
+
+Answer:
+
+Cloud SQL:
+
+Standard managed database
+
+AlloyDB:
+
+PostgreSQL compatible
+Better performance
+Enterprise workloads
+30. When would you use Bigtable?
+
+Answer:
+High-throughput low-latency workloads like IoT and time-series data.
+
+Data Engineering
+31. Real-time streaming architecture?
+
+Answer:
+Pub/Sub → Dataflow → BigQuery
+
+32. Batch processing architecture?
+
+Answer:
+Cloud Storage → Dataflow → BigQuery
+
+33. Customer wants petabyte analytics.
+
+Answer:
+BigQuery.
+
+34. How would you build a data lake?
+
+Answer:
+Cloud Storage + BigQuery + Dataplex.
+
+35. Event-driven architecture?
+
+Answer:
+Pub/Sub + Cloud Run + Eventarc.
+
+Monitoring & Operations
+36. How do you monitor production systems?
+
+Answer:
+
+Cloud Monitoring
+Cloud Logging
+Alerting
+Dashboards
+37. Application latency increased. What do you check?
+
+Answer:
+
+Load Balancer metrics
+CPU/Memory
+Network latency
+Database performance
+Logs
+38. How do you troubleshoot failures?
+
+Answer:
+Logs → Metrics → Traces → Root Cause Analysis.
+
+39. How do you implement observability?
+
+Answer:
+Monitoring + Logging + Tracing + Alerting.
+
+40. How do you handle incident management?
+
+Answer:
+Alert → Diagnose → Mitigate → RCA → Preventive Action.
+
+Disaster Recovery
+41. Design DR for mission-critical application.
+
+Answer:
+
+Multi-region deployment
+Database replication
+Automated failover
+Backup strategy
+DR testing
+42. What DR model would you recommend?
+
+Answer:
+
+Cold:
+
+Cheapest
+
+Warm:
+
+Moderate cost
+
+Hot:
+
+Fastest recovery
+43. Application requires RTO 15 min and RPO 5 min.
+
+Answer:
+Active-Active or Active-Passive with near real-time replication.
+
+44. How do you backup databases?
+
+Answer:
+Automated backups + PITR + Cross-region copies.
+
+45. How often should DR be tested?
+
+Answer:
+At least quarterly.
+
+Cost Optimization
+46. Customer cloud bill increased 40%.
+
+Answer:
+
+Rightsize VMs
+Remove idle resources
+Use CUDs
+Spot VMs
+Storage optimization
+47. How do you reduce Kubernetes cost?
+
+Answer:
+
+Autoscaling
+Spot Nodes
+Rightsizing
+Node Auto Provisioning
+48. How do you optimize BigQuery cost?
+
+Answer:
+
+Partitioning
+Clustering
+Materialized Views
+Query optimization
+49. How do you optimize storage cost?
+
+Answer:
+Lifecycle policies and appropriate storage classes.
+
+50. Executive asks why GCP is expensive.
+
+Answer:
+"I would analyze spend by workload, identify waste, apply optimization recommendations, leverage committed discounts, and align resources with actual business demand."
+
+Most Important Architect-Level Design Question
+"Design a scalable e-commerce platform on GCP."
+
+Answer Structure (2-Minute Framework):
+
+Requirements Gathering
+Users?
+Availability?
+Traffic?
+Frontend
+Cloud CDN
+Global Load Balancer
+Application Layer
+GKE / Cloud Run
+Autoscaling
+Database
+Cloud SQL / Spanner
+Cache
+Memorystore (Redis)
+Messaging
+Pub/Sub
+Security
+IAM
+Cloud Armor
+KMS
+Monitoring
+Cloud Monitoring
+Cloud Logging
+DR
+Multi-region
+Automated backups
+Cost Optimization
+Autoscaling
+Committed Use Discounts
