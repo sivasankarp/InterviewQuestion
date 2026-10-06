@@ -9,3 +9,24 @@ which all modules you worked on ServiceNow modules?
 In Catalog item. And when we are opening that catalog item into the portal, it is taking almost 10 seconds, which is quite a long time. I want to optimize it. What I can do?
 Suppose there is a scenario. By mistake one of our teammate has deployed code into the production, which approved all the approval records automatically from the backend. So intended was, intent was like just to approve the seven days approval record which are open for last seven days. But unfortunately that code didn't work as expected. It triggered all the approvals, which created a lot of issue, like P1 issue. So what will be your approach? How you will address it?
 ITOM configuration 3 pillars
+It will be a lot of backend tables as well. Okay, so in that case, you want to roll back the scripting approach? You want to know that how we are taking care, or? I just want to understand what you have first thoughts, what you will do, how we will handle it / how you will try to recover it.
+Can I use GlideRecord directly into the client scripts? In production or in general? No, in general.
+in server-side script, we have something called as a current, previous, and gs.dot. Can you help me to understand what are these keywords?
+I have one requirement, like we have one email address, existing email address. When someone sends that email to that particular mailbox, it should create incident in ServiceNow and it should get assigned to specific assignment group. So what you will use, how you will handle it, what you will do.
+What you will use? You will use Flow Designer or inbound action? Service Now inbound action.
+And then the contact person. Do you have any idea how they work, what exactly the purpose of it?
+One contact should represent multiple accounts. Is that possible?
+Out of the box, in ServiceNow CSM
+The other contact person from different account will be able to see all the account details, right?
+From the one contact. Yeah, I mean mostly we can try to make the. What is it? generic/flexible?
+What is Entitlement & its use
+Can you, obviously you have a lot of bullet points in your CV that kind of talk about a lot of different aspects. Can you talk to me specifically around AI, how you've used this? Because I know you mentioned, like Now Assist and various other AI agents, but can you talk to me about what, we'll say, module or whatever functionality within ServiceNow you kind of used AI to assist you with and what exactly you were doing?
+The most complex and difficult or challenging implementation you've conducted.
+You know, the customer, excuse me, kind of, there was a SOW in place, but the customer were asking for more. So in terms of a statement of work, was there, was signed off, but the customer kept pushing you to consider other elements or to make additional changes. And how did you handle it?
+In your CV you mentioned you led geographically distributed delivery teams across architecture, development, testing, and production deployment activities. How big were those teams you have led?
+Your leadership style for leading teams, what style and how organized? How do you organize those teams and the work they do?
+Situation, which worked not so well from a team perspective, where people were not performing, and what action did you take?
+No, that's fine. And did you make your manager aware of, let's say, having this issue with the resource and what you were doing with them?
+Can you talk to me about in your past career where you kind of designed and delivered ServiceNow solutions from an architectural perspective that were, as you say, future-proof for long-term success? Can you just talk me through that?
+Doing some of those workshops in the past, how did you advise the customer on, like when you were looking at the future state processes and the solution you were kind of coming together and going to propose back to them, how did you advise the customer on the platform value? Because obviously it's a significant cost, you know, from a licensing perspective, etc.
+I mean, because we're already at the end, it would be nice that you sum up actually the working environment, which needs to be there so that you can smile at project, right? I'm pretty sure not all projects are the same, also for you. And you will have, let's say, you will have seen projects which you like and which you not like so much. If you think of the worst things or worst environments you have seen so far and the best ones, if you can let us share your experience, what would you prefer and what you not so much like. And everyone is different. It's not about us evaluating on that. It's just to understand what you are expecting.
