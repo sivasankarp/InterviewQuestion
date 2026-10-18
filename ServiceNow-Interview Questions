@@ -30,3 +30,42 @@ No, that's fine. And did you make your manager aware of, let's say, having this 
 Can you talk to me about in your past career where you kind of designed and delivered ServiceNow solutions from an architectural perspective that were, as you say, future-proof for long-term success? Can you just talk me through that?
 Doing some of those workshops in the past, how did you advise the customer on, like when you were looking at the future state processes and the solution you were kind of coming together and going to propose back to them, how did you advise the customer on the platform value? Because obviously it's a significant cost, you know, from a licensing perspective, etc.
 I mean, because we're already at the end, it would be nice that you sum up actually the working environment, which needs to be there so that you can smile at project, right? I'm pretty sure not all projects are the same, also for you. And you will have, let's say, you will have seen projects which you like and which you not like so much. If you think of the worst things or worst environments you have seen so far and the best ones, if you can let us share your experience, what would you prefer and what you not so much like. And everyone is different. It's not about us evaluating on that. It's just to understand what you are expecting.
+Can u write the code In the query, the requirement is to write the script, which should give us a count of, you know, the server, okay, which is in operational. Okay. So server, the count basically. And it should display the source, discovery source also. For example, operational status. Operational means you need to have some GLide query written with the appropriate condition and display the name of the server and discovery source.
+var gr = new GlideRecord('cmdb_ci_server');
+gr.addQuery('operational_status', 1); // Operational
+gr.query();
+
+var count = 0;
+
+while (gr.next()) {
+    count++;
+    gs.print('Server: ' + gr.getDisplayValue('name') +
+             ' | Discovery Source: ' + gr.getDisplayValue('discovery_source'));
+}
+
+gs.print('Total Operational Servers: ' + count);
+
+You can use GlideAggregate, which is more efficient:
+var ga = new GlideAggregate('cmdb_ci_server');
+ga.addQuery('operational_status', 1);
+ga.addAggregate('COUNT');
+ga.query();
+
+if (ga.next()) {
+    gs.print('Total Operational Servers: ' + ga.getAggregate('COUNT'));
+}
+
+If they ask for count by Discovery Source
+That's probably the stronger architect/developer answer:
+var ga = new GlideAggregate('cmdb_ci_server');
+ga.addQuery('operational_status', 1);
+ga.addAggregate('COUNT');
+ga.groupBy('discovery_source');
+ga.query();
+
+while (ga.next()) {
+    gs.print(
+        'Discovery Source: ' + ga.getDisplayValue('discovery_source') +
+        ' | Count: ' + ga.getAggregate('COUNT')
+    );
+}
